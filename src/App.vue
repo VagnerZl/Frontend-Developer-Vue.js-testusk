@@ -197,7 +197,7 @@ export default {
         return i;
       });
     },
-    onListCheck(checked, id) {
+    onListCheck(id, checked) {
       this.dataLists[id].items.forEach((item) => {
         item.checked = checked;
       });

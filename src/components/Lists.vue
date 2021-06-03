@@ -6,7 +6,7 @@
         <input
           type="checkbox"
           v-model="list.checked"
-          v-on:change="checkHandler($event, list.id)"
+          v-on:change="checkHandler(list.id, list.checked)"
         />
         {{ list.name }}
       </label>
@@ -48,8 +48,9 @@ export default {
     onColorChange(color, id, itemName) {
       this.$emit("onColorChange", color, id, itemName);
     },
-    checkHandler(id) {
-      this.$emit("onListCheck", id);
+    checkHandler(id, checked) {
+      console.log(id, checked);
+      this.$emit("onListCheck", id, checked);
     },
     onItemCheck(itemChecked, id, name) {
       this.$emit("onItemCheck", itemChecked, id, name);
